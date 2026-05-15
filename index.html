@@ -1,3 +1,81 @@
 <!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Security Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- 問題選択画面 -->
+    <div id="menu-screen" class="screen">
+
+        <h1>セキュリティクイズ一覧</h1>
+        <button onclick="showStudyScreen()">
+            クイズ1
+        </button>
+        <button class="option-card" onclick="startQuiz(2)">
+            クイズ2
+        </button>
+        <button class="option-card" onclick="startQuiz(3)">
+            クイズ3
+        </button>
+
+    </div>
+
+    <!-- クイズ画面 -->
+    <div id="study-screen" class="screen hidden">
+
+        <h1>動画視聴</h1>
+        <button onclick="showQuizScreen()">
+            問題へ
+        </button>
+
+    </div>
+
+    <!-- クイズ画面 -->
+    <div id="quiz-screen" class="screen hidden">
+
+        <h1>クイズ</h1>
+        <h2>
+            あなたはどうする？
+        </h2>
+        <button onclick="answerQuestion(true)">
+            わわわ
+        </button>
+
+        <button onclick="answerQuestion(false)">
+            うぃうぃうぃ
+        </button>
+
+        <button onclick="answerQuestion(false)">
+            ううう
+        </button>
+
+        <button onclick="answerQuestion(false)">
+            うぇうぇうぇｗ
+        </button>
+
+    </div>
+
+    <!-- 解説画面 -->
+    <div id="explanation-screen" class="screen hidden">
+
+        <h1>解説</h1>
+
+        <p>
+            解説解説解説。
+        </p>
+
+        <button onclick="showMenuScreen()">
+            問題選択へ
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
 
 </html>
