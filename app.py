@@ -1,11 +1,15 @@
 from fastapi import FastAPI
-from problem import problems
 from pydantic import BaseModel
+import json
 
 class Answer(BaseModel):
     answer:list[int]
 
 app=FastAPI()
+
+with open("problem.json","r",encoding="utf-8") as f:
+    problems=json.load(f)
+
 @app.get("/")
 def root():
     return{"message":"apiapiapi"}
