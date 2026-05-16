@@ -1,6 +1,7 @@
-# question_imageは問題文と一緒に表示
-
-problems=[
+[
+    {
+    "$comment": "question_imageは問題文と一緒に表示"
+    },
     {
         "number":1,
         "question":"友達がSNSにこのような投稿をしていたよ。この投稿は安全なのかな？あなたがこれを投稿するならどこに気を付けて投稿する？？",
