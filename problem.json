@@ -1,0 +1,33 @@
+[
+    {
+    "$comment": "question_imageは問題文と一緒に表示"
+    },
+    {
+        "number":1,
+        "question":"友達がSNSにこのような投稿をしていたよ。この投稿は安全なのかな？あなたがこれを投稿するならどこに気を付けて投稿する？？",
+        "question_image":"https://drive.google.com/drive/folders/1Ps53YGFI_fM6F6fF_WRJYUEWfPdygvxe",
+        "description_video_url":"https://drive.google.com/drive/folders/1veXerGH0BY4eN5Ur2ekJzUvU5Tq7EC2N",
+        "options":[
+            {"number":1,"option":"投稿文"},
+            {"number":2,"option":"画像内容(正解)"},
+            {"number":3,"option":"投稿時間"},
+            {"number":3,"option":"位置情報"}
+        ],
+        "corect_answer":[2],
+        "explanation":"仕事が終わった後の投稿で写真内のPCには、その会社の売り上げ情報のようなものが表示されています。これが漏れ出すことによって、会社の信用が落ちてしまい、会社の損失になってしまう可能性があります。あなたのSNSは、大丈夫ですか？？"
+    },
+    {
+        "number":2,
+        "question":"あなたがよく使っている大手オンラインショップからこんなメールが届いたよ。このメールに怪しい点はあるかな？？”最も怪しい点”と考えられるものを選んでね！",
+        "question_image":"https://drive.google.com/drive/folders/1t1XppYh_S7OPaDRHfWRgiJrcinvptDvD",
+        "description_video_url":"https://drive.google.com/drive/folders/1xU626viLEL7TMOZduRicRZW2ZysgdpV7",
+        "options":[
+            {"number":1,"option":"本文の日本語"},
+            {"number":2,"option":"送信元メールアドレス(正解)"},
+            {"number":3,"option":"メールのデザイン"},
+            {"number":3,"option":"怪しいものではない"}
+        ],
+        "corect_answer":[2],
+        "explanation":"表示名はExample-Security、メールアドレスはExampleShop-supportとなっておりずれが生じてる。また、だれでも製作可能なフリーメールであるgmailアドレスが使われているため、怪しい。ほか部分でも本文が緊急性を示すような内容であったり、URLのExampleのlが大文字になっていたり、している。このような総合的な内容からフィッシングメールと見分けるのがよいだろう。"
+    }    
+]
