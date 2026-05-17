@@ -25,9 +25,23 @@
             {"number":1,"option":"本文の日本語"},
             {"number":2,"option":"送信元メールアドレス(正解)"},
             {"number":3,"option":"メールのデザイン"},
-            {"number":3,"option":"怪しいものではない"}
+            {"number":4,"option":"怪しいものではない"}
         ],
         "corect_answer":[2],
         "explanation":"表示名はExample-Security、メールアドレスはExampleShop-supportとなっておりずれが生じてる。また、だれでも製作可能なフリーメールであるgmailアドレスが使われているため、怪しい。ほか部分でも本文が緊急性を示すような内容であったり、URLのExampleのlが大文字になっていたり、している。このような総合的な内容からフィッシングメールと見分けるのがよいだろう。"
-    }    
+    },
+    {
+        "number":3,
+        "question":"Aさんは・通販サイト・銀行・メールアカウント・サブスクリプションサービスで、同一のパスワードを使用しています。メールアカウントのパスワードが流出した場合、どのような危険性があるだろうか？",
+        "question_image":"https://drive.google.com/drive/folders/1gR9XDUOwyaTKWjfvQH2HkVlDdekpvmYQ",
+        "description_video_url":"https://drive.google.com/drive/folders/1r2X-8zSY5rz3I2Yc-GfTZsGRgje6rR5-",
+        "options":[
+            {"number":1,"option":"銀行のパスワードが流出する"},
+            {"number":2,"option":"通販サイトのパスワードが流出する"},
+            {"number":3,"option":"サブスクリプションサービスのパスワードが流出する"},
+            {"number":4,"option":"1～3全てのパスワードが流出する(正解)"}
+        ],
+        "corect_answer":[4],
+        "explanation":"同一のパスワードを使いまわすことで、一つのサービスからの情報で、複数のサービスの情報が流出してしまう危険性がある。特に、過去に登録したまま放置されているサービスや小規模のサービスからメールアドレスなど個人情報が流出する恐れもある。"
+    }      
 ]
