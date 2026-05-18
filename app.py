@@ -13,8 +13,13 @@ app=FastAPI()
 with open("data/problem.json","r",encoding="utf-8") as f:
     problems=json.load(f)
 
+# app.py で読み込んだ problems をnumber キーを持つ要素だけに絞る
+problems = [p for p in problems if isinstance(p, dict) and "number" in p]
+
 # staticフォルダを公開することで中のcss、jsをhtmlが呼び出せるようにする
 app.mount("/static", StaticFiles(directory="static"), name="static")
+# dataフォルダを公開して problem.json を fetch できるようにする
+app.mount("/data", StaticFiles(directory="data"), name="data")
 
 # HTML表示
 @app.get("/", response_class=HTMLResponse)
@@ -26,14 +31,14 @@ def root():
 @app.get("/problem/{problem_number}/description")
 def description_get(problem_number:int):
     for problem in problems:
-        if problem["number"]==problem_number:
+        if problem.get("number") == problem_number:
             return {"description_video_url":problem["description_video_url"]}
 
 #問題出すとき
 @app.get("/problem/{problem_number}/question")
 def question_get(problem_number:int):
     for problem in problems:
-        if problem["number"]==problem_number:
+        if problem.get("number") == problem_number:
             return {
                 "question":problem["question"],
                 "options":problem["options"]
@@ -43,7 +48,7 @@ def question_get(problem_number:int):
 @app.post("/problem/{problem_number}/answer")
 def answer_post(answer:Answer,problem_number:int):
     for problem in problems:
-        if problem_number==problem["number"]:
+        if problem_number == problem.get("number"):
             corect=(set(answer.answer)==set(problem["corect_answer"]))
             return {"corect":corect}
             
@@ -51,5 +56,5 @@ def answer_post(answer:Answer,problem_number:int):
 @app.get("/problem/{problem_number}/explanation")
 def explanation_get(problem_number:int):
     for problem in problems:
-        if problem["number"]==problem_number:
+        if problem.get("number") == problem_number:
             return {"explanation":problem["explanation"]}
