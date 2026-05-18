@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
 import json
 
 class Answer(BaseModel):
@@ -7,12 +9,18 @@ class Answer(BaseModel):
 
 app=FastAPI()
 
-with open("problem.json","r",encoding="utf-8") as f:
+# jsonを読み込み、中のデータを読み取れるようにする
+with open("data/problem.json","r",encoding="utf-8") as f:
     problems=json.load(f)
 
-@app.get("/")
+# staticフォルダを公開することで中のcss、jsをhtmlが呼び出せるようにする
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# HTML表示
+@app.get("/", response_class=HTMLResponse)
 def root():
-    return{"message":"apiapiapi"}
+    with open("templetes/index.html", "r", encoding="utf-8") as f:
+        return f.read()
 
 #最初の説明
 @app.get("/problem/{problem_number}/description")
