@@ -42,25 +42,24 @@
     <!-- クイズ画面 -->
     <div id="quiz-screen" class="screen hidden">
 
-        <h1>クイズ</h1>
-        <h2>
-            あなたはどうする？
-        </h2>
-        <button onclick="answerQuestion(true)">
-            わわわ
-        </button>
+        <h1 >問題</h1>
+        <h2 id="question-text"></h2>
+        
+            <button class="option-button" onclick="answerQuestion(true)">
+                <p id="select1"></p>
+            </button>
 
-        <button onclick="answerQuestion(false)">
-            うぃうぃうぃ
-        </button>
+            <button class="option-button" onclick="answerQuestion(false)">
+                <p id="select2"></p>
+            </button>
 
-        <button onclick="answerQuestion(false)">
-            ううう
-        </button>
+            <button class="option-button" onclick="answerQuestion(false)">
+                <p id="select3"></p>
+            </button>
 
-        <button onclick="answerQuestion(false)">
-            うぇうぇうぇｗ
-        </button>
+            <button class="option-button" onclick="answerQuestion(false)">
+                <p id="select4"></p>
+            </button>
 
     </div>
 

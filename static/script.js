@@ -70,6 +70,16 @@ function showQuizScreen() {
 
     document.getElementById("quiz-screen")
         .classList.remove("hidden");
+
+        // 問題文を画面に反映してから表示
+    const h2quiz = document.getElementById("question-text");
+    if (h2quiz) h2quiz.textContent = currentQuestion || "";
+    
+    for(i=1;i<=options.length;i++){
+    const select = document.getElementById(`select${i}`);
+    if (select) select.textContent = questionData.options[i].option || "";
+    console.log(select.textContent);
+    }
 }
 
 function showExplanationScreen() {
@@ -82,25 +92,38 @@ function showExplanationScreen() {
 
 // グローバル変数で現在の問題IDを保持
 let currentProblemId = null;
+let currentQuestion = null;
+let questionData =null;
 
 //クイズ番号の指定と説明動画URLを取得
 async function studyQuiz(quizId) {
     currentProblemId = quizId;
-
+    
     try {
         const descriptionResponse = await fetch(`/problem/${quizId}/description`);
         if (!descriptionResponse.ok) throw new Error('説明動画の取得に失敗しました');
-        //データ取得
+        //JSONデータ取得
         const descriptionData = await descriptionResponse.json();
         const videoUrl = typeof descriptionData === "string"
             ? descriptionData
             : descriptionData.description_video_url || "";
         //文字列はパースするとオブジェクトのためオブジェクトのキー値のみ抽出
-
         if (!videoUrl) throw new Error('説明動画URLが見つかりません');
         if (!isAllowedVideoUrl(videoUrl)) throw new Error('説明動画URLが安全ではありません');
-
         showStudyScreen(videoUrl);
+
+        const questionResponse = await fetch(`/problem/${quizId}/question`);
+        if (!questionResponse.ok) throw new Error('問題の取得に失敗しました');
+        questionData = await questionResponse.json();
+        const question = typeof questionData === "string"
+            ? questionData
+            : questionData.question || "";
+        
+        currentQuestion = question;
+
+
+
+
 
     } catch (error) {
         console.error("通信エラー:", error);
