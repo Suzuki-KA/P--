@@ -164,7 +164,7 @@ function answerQuestion(answerId) {
     const data = {
         answer: [answerId]
     };
-    fetch(`http://127.0.0.1:8000/problem/${currentProblemId}/answer`, {
+    fetch(`../problem/${currentProblemId}/answer`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
