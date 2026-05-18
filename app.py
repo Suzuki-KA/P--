@@ -41,7 +41,8 @@ def question_get(problem_number:int):
         if problem.get("number") == problem_number:
             return {
                 "question":problem["question"],
-                "options":problem["options"]
+                "options":problem["options"],
+                "image":problem["question_image"]
             }
 
 #正誤判定
