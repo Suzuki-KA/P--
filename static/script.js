@@ -71,14 +71,14 @@ function showQuizScreen() {
     document.getElementById("quiz-screen")
         .classList.remove("hidden");
 
-        // 問題文を画面に反映してから表示
+    // 問題文を画面に反映してから表示
     const h2quiz = document.getElementById("question-text");
     if (h2quiz) h2quiz.textContent = currentQuestion || "";
-    
-    for(i=1;i<=options.length;i++){
-    const select = document.getElementById(`select${i}`);
-    if (select) select.textContent = questionData.options[i].option || "";
-    console.log(select.textContent);
+
+    for (i = 1; i <= 4; i++) {
+        const select = document.getElementById(`select${i}`);
+        if (select) select.textContent = questionData.options[i - 1].option || "";
+        console.log(select.textContent);
     }
 }
 
@@ -88,17 +88,22 @@ function showExplanationScreen() {
 
     document.getElementById("explanation-screen")
         .classList.remove("hidden");
+
+    const explanation = document.getElementById("explanation-text");
+    if (explanation) explanation.textContent = currentExplanation || "";
+
 }
 
 // グローバル変数で現在の問題IDを保持
 let currentProblemId = null;
 let currentQuestion = null;
-let questionData =null;
+let questionData = null;
+let currentExplanation = null;
 
 //クイズ番号の指定と説明動画URLを取得
 async function studyQuiz(quizId) {
     currentProblemId = quizId;
-    
+
     try {
         const descriptionResponse = await fetch(`/problem/${quizId}/description`);
         if (!descriptionResponse.ok) throw new Error('説明動画の取得に失敗しました');
@@ -118,10 +123,17 @@ async function studyQuiz(quizId) {
         const question = typeof questionData === "string"
             ? questionData
             : questionData.question || "";
-        
+
         currentQuestion = question;
 
+        const explanationResponse = await fetch(`/problem/${quizId}/explanation`);
+        if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
+        explanationData = await explanationResponse.json();
+        const explanation = typeof explanationData === "string"
+            ? explanationData
+            : explanationData.explanation || "";
 
+        currentExplanation = explanation;
 
 
 
@@ -132,13 +144,29 @@ async function studyQuiz(quizId) {
     }
 }
 
-function answerQuestion(correct){
+function answerQuestion(answerId) {
+    const data = {
+        answer: [answerId]
+    };
+    fetch(`http://127.0.0.1:8000/problem/${currentProblemId}/answer`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(result => {
+            console.log(result);
+            if (result.corect == "true") {
+                alert("〇 正解！");
+            } else {
+                alert("× 不正解");
+            }
+            showExplanationScreen();
+        });
 
-    if(correct){
-        alert("〇 正解！");
-    } else {
-        alert("× 不正解");
-    }
 
-    showExplanationScreen();
+
+    
 }
