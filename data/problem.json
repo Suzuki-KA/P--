@@ -5,8 +5,8 @@
     {
         "number":1,
         "question":"友達がSNSにこのような投稿をしていたよ。この投稿は安全なのかな？あなたがこれを投稿するならどこに気を付けて投稿する？？",
-        "question_image":"https://drive.google.com/file/d/1ly9EndnR7QfFHIwqJLHwsbMVapXD-ach/view?usp=sharing",
-        "description_video_url":"https://drive.google.com/drive/folders/1veXerGH0BY4eN5Ur2ekJzUvU5Tq7EC2N",
+        "question_image":"https://drive.google.com/file/d/1ly9EndnR7QfFHIwqJLHwsbMVapXD-ach/preview?usp=sharing",
+        "description_video_url":"https://drive.google.com/file/d/1FA8dXjK6F0MBH5Be28H-KOdqhi9F3gJt/preview?usp=drivesdk",
         "options":[
             {"number":1,"option":"投稿文"},
             {"number":2,"option":"画像内容(正解)"},
@@ -19,7 +19,7 @@
     {
         "number":2,
         "question":"あなたがよく使っている大手オンラインショップからこんなメールが届いたよ。このメールに怪しい点はあるかな？？”最も怪しい点”と考えられるものを選んでね！",
-        "question_image":"https://drive.google.com/file/d/1NT0PlndDle_tfj-cqFC7YBBnDIV0ubb1/view?usp=sharing",
+        "question_image":"https://drive.google.com/file/d/1NT0PlndDle_tfj-cqFC7YBBnDIV0ubb1/preview?usp=sharing",
         "description_video_url":"https://drive.google.com/drive/folders/1xU626viLEL7TMOZduRicRZW2ZysgdpV7",
         "options":[
             {"number":1,"option":"本文の日本語"},
@@ -33,7 +33,7 @@
     {
         "number":3,
         "question":"Aさんは・通販サイト・銀行・メールアカウント・サブスクリプションサービスで、同一のパスワードを使用しています。メールアカウントのパスワードが流出した場合、どのような危険性があるだろうか？",
-        "question_image":"https://drive.google.com/file/d/1YhKD3eXgtO__FXbuI7jkpy7DEze84hhr/view?usp=sharing",
+        "question_image":"https://drive.google.com/file/d/1YhKD3eXgtO__FXbuI7jkpy7DEze84hhr/preview?usp=sharing",
         "description_video_url":"https://drive.google.com/drive/folders/1gR9XDUOwyaTKWjfvQH2HkVlDdekpvmYQ",
         "options":[
             {"number":1,"option":"銀行のパスワードが流出する"},
