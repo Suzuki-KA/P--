@@ -18,8 +18,6 @@ problems = [p for p in problems if isinstance(p, dict) and "number" in p]
 
 # staticフォルダを公開することで中のcss、jsをhtmlが呼び出せるようにする
 app.mount("/static", StaticFiles(directory="static"), name="static")
-# dataフォルダを公開して problem.json を fetch できるようにする
-app.mount("/data", StaticFiles(directory="data"), name="data")
 
 # HTML表示
 @app.get("/", response_class=HTMLResponse)
