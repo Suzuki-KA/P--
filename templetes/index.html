@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Security Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
@@ -12,22 +12,27 @@
     <div id="menu-screen" class="screen">
 
         <h1>セキュリティクイズ一覧</h1>
-        <button onclick="showStudyScreen()">
+        <button onclick="studyQuiz(1)">
             クイズ1
         </button>
-        <button class="option-card" onclick="startQuiz(2)">
+        <button class="option-card" onclick="studyQuiz(2)">
             クイズ2
         </button>
-        <button class="option-card" onclick="startQuiz(3)">
+        <button class="option-card" onclick="studyQuiz(3)">
             クイズ3
         </button>
 
     </div>
 
-    <!-- クイズ画面 -->
-    <div id="study-screen" class="screen hidden">
-
+    <!-- 動画視聴画面 -->
+    <div id="study-screen" class="screenvideo hidden">
+        
         <h1>動画視聴</h1>
+        <iframe id="video-frame" width="800" height="450" src=""
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
         <button onclick="showQuizScreen()">
             問題へ
         </button>
@@ -74,7 +79,7 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="../static/script.js"></script>
 
 </body>
 
