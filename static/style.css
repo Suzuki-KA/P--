@@ -1,12 +1,24 @@
+:root {
+    --primary-blue: #2563eb;      /* 信頼のブルー */
+    --deep-blue: #1e40af;         /* 濃いブルー（強調） */
+    --soft-blue: #dbeafe;         /* 薄いブルー（背景用） */
+    --bg-light: #f8fafc;          /* 全体背景 */
+    --text-main: #1e293b;         /* メイン文字色 */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
 body {
     background-color: #f4f4f4;
     font-family: sans-serif;
     text-align: center;
+    display: flex;
+    gap: 20px;
 }
 
 .screen {
-    width: 500px;
-    margin: 100px auto;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
@@ -14,7 +26,7 @@ body {
 
 .screenvideo {
     width: 800px;
-    margin: 100px auto;
+    margin: 50px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
@@ -32,4 +44,75 @@ button {
     padding: 12px;
     font-size: 16px;
     cursor: pointer;
+}
+
+/*かざり*/
+
+/*プロセス*/
+.progress-container {
+    background-color: var(--soft-blue);
+    border-radius: 10px;
+    height: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: var(--primary-blue);
+    height: 100%;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.step-number {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* 選択肢カードのレイアウト */
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.option-card {
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    background: var(--white);
+    border: 2px solid var(--soft-blue);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: left;
+}
+
+.option-card:hover {
+    border-color: var(--primary-blue);
+    background-color: var(--soft-blue);
+    transform: translateX(5px);
+}
+
+.option-label {
+    background: var(--primary-blue);
+    color: var(--white);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 15px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.option-card p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
 }

@@ -8,11 +8,11 @@
 </head>
 
 <body>
-<!-- 問題選択画面 -->
+    <!-- 問題選択画面 -->
     <div id="menu-screen" class="screen">
-
+        
         <h1>セキュリティクイズ一覧</h1>
-        <button onclick="studyQuiz(1)">
+        <button class="option-card" onclick="studyQuiz(1)">
             クイズ1
         </button>
         <button class="option-card" onclick="studyQuiz(2)">
@@ -26,10 +26,15 @@
 
     <!-- 動画視聴画面 -->
     <div id="study-screen" class="screenvideo hidden">
-        
+    <header>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 33%;"></div>
+            </div>
+            <div class="step-number">Step 1 / 3</div>
+        </header>
+
         <h1>動画視聴</h1>
-        <iframe id="video-frame" width="800" height="450" src=""
-            title="YouTube video player" frameborder="0"
+        <iframe id="video-frame" width="800" height="450" src="" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
@@ -40,31 +45,52 @@
     </div>
 
     <!-- クイズ画面 -->
+    <div id="image-screen" class="screen hidden">
+        <h1>シナリオ</h1>
+        <img id="image-url" src="" width="300">
+    </div>
+
     <div id="quiz-screen" class="screen hidden">
+    <header >
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 66%;"></div>
+            </div>
+            <div class="step-number">Step 2 / 3</div>
+        </header>
 
-        <h1 >問題</h1>
+        <h1>問題</h1>
         <h2 id="question-text"></h2>
+        <div class="options-grid">
+            <button class="option-card" onclick="answerQuestion(1)">
+            <span class="option-label">1</span>
+            <p id="select1"></p>
+        </button>
+        <button class="option-card" onclick="answerQuestion(2)">
+            <span class="option-label">2</span>
+            <p id="select2"></p>
+        </button>
+        <button class="option-card" onclick="answerQuestion(3)">
+            <span class="option-label">3</span>
+            <p id="select3"></p>
+        </button>
+        <button class="option-card" onclick="answerQuestion(4)">
+            <span class="option-label">4</span>
+            <p id="select4"></p>
+        </button>
+            
+        </div>
         
-            <button class="option-button" onclick="answerQuestion(1)">
-                <p id="select1"></p>
-            </button>
-
-            <button class="option-button" onclick="answerQuestion(2)">
-                <p id="select2"></p>
-            </button>
-
-            <button class="option-button" onclick="answerQuestion(3)">
-                <p id="select3"></p>
-            </button>
-
-            <button class="option-button" onclick="answerQuestion(4)">
-                <p id="select4"></p>
-            </button>
 
     </div>
 
     <!-- 解説画面 -->
     <div id="explanation-screen" class="screen hidden">
+        <header >
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+            <div class="step-number">Step 3 / 3</div>
+        </header>
 
         <h1>解説</h1>
 

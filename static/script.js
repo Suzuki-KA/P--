@@ -8,6 +8,8 @@ function hideAllScreens() {
 
     document.getElementById("quiz-screen")
         .classList.add("hidden");
+    document.getElementById("image-screen")
+        .classList.add("hidden");
 
     document.getElementById("explanation-screen")
         .classList.add("hidden");
@@ -70,16 +72,24 @@ function showQuizScreen() {
 
     document.getElementById("quiz-screen")
         .classList.remove("hidden");
+    document.getElementById("image-screen")
+        .classList.remove("hidden");
 
     // 問題文を画面に反映してから表示
     const h2quiz = document.getElementById("question-text");
     if (h2quiz) h2quiz.textContent = currentQuestion || "";
+
+    // const imageUrl = document.getElementById("image-url");
+    // if (imageUrl) imageUrl.textContent = currentImageUrl || "";
+    // console.log(imageUrl);
+    // imageUrl.src = imageUrl;
 
     for (i = 1; i <= 4; i++) {
         const select = document.getElementById(`select${i}`);
         if (select) select.textContent = questionData.options[i - 1].option || "";
         console.log(select.textContent);
     }
+    
 }
 
 function showExplanationScreen() {
@@ -99,6 +109,7 @@ let currentProblemId = null;
 let currentQuestion = null;
 let questionData = null;
 let currentExplanation = null;
+let currentImageUrl =null;
 
 //クイズ番号の指定と説明動画URLを取得
 async function studyQuiz(quizId) {
@@ -125,6 +136,11 @@ async function studyQuiz(quizId) {
             : questionData.question || "";
 
         currentQuestion = question;
+
+        // const image = typeof questionData === "string"
+        //     ? questionData
+        //     : questionData.image || "";
+        // currentImageUrl = image;
 
         const explanationResponse = await fetch(`/problem/${quizId}/explanation`);
         if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
@@ -157,8 +173,8 @@ function answerQuestion(answerId) {
     })
         .then(response => response.json())
         .then(result => {
-            console.log(result);
-            if (result.corect == "true") {
+            console.log(result.corect);
+            if (result.corect === true) {
                 alert("〇 正解！");
             } else {
                 alert("× 不正解");
