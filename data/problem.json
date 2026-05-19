@@ -20,7 +20,7 @@
         "number":2,
         "question":"あなたがよく使っている大手オンラインショップからこんなメールが届いたよ。このメールに怪しい点はあるかな？？”最も怪しい点”と考えられるものを選んでね！",
         "question_image":"/static/quiz2.png",
-        "description_video_url":"https://drive.google.com/drive/folders/1xU626viLEL7TMOZduRicRZW2ZysgdpV7",
+        "description_video_url":"https://drive.google.com/file/d/1MjcJpj9Cn86ZsSSWEsw8VsC5BOWpofl7/preview?usp=drivesdk",
         "options":[
             {"number":1,"option":"本文の日本語"},
             {"number":2,"option":"送信元メールアドレス(正解)"},
@@ -34,7 +34,7 @@
         "number":3,
         "question":"Aさんは・通販サイト・銀行・メールアカウント・サブスクリプションサービスで、同一のパスワードを使用しています。メールアカウントのパスワードが流出した場合、どのような危険性があるだろうか？",
         "question_image":"/static/quiz3.png",
-        "description_video_url":"https://drive.google.com/drive/folders/1gR9XDUOwyaTKWjfvQH2HkVlDdekpvmYQ",
+        "description_video_url":"https://drive.google.com/file/d/1ycp7PGHX2_FbXSswPaerbXqfs-gkqkta/preview?usp=drivesdk",
         "options":[
             {"number":1,"option":"銀行のパスワードが流出する"},
             {"number":2,"option":"通販サイトのパスワードが流出する"},
