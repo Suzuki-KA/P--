@@ -83,6 +83,9 @@ function showQuizScreen() {
     // if (imageUrl) imageUrl.textContent = currentImageUrl || "";
     // console.log(imageUrl);
     // imageUrl.src = imageUrl;
+    
+    document.getElementById("image-url").src =
+    `/static/quiz${currentProblemId}.png`;
 
     for (i = 1; i <= 4; i++) {
         const select = document.getElementById(`select${i}`);
