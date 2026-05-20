@@ -6,7 +6,7 @@
         "number":1,
         "question":"友達がSNSにこのような投稿をしていたよ。この投稿は安全なのかな？あなたがこれを投稿するならどこに気を付けて投稿する？？",
         "question_image":"/static/quiz1.png",
-        "description_video_url":"https://drive.google.com/file/d/1FA8dXjK6F0MBH5Be28H-KOdqhi9F3gJt/preview?usp=drivesdk",
+        "description_video_url":"https://drive.google.com/file/d/1_5va1nZz7pOxvJyGq7CDHgIi8jacNvPy/preview?usp=drivesdk",
         "options":[
             {"number":1,"option":"投稿文"},
             {"number":2,"option":"画像内容(正解)"},
