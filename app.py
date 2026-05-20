@@ -22,7 +22,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # HTML表示
 @app.get("/", response_class=HTMLResponse)
 def root():
-    with open("templetes/index.html", "r", encoding="utf-8") as f:
+    with open("templates/index.html", "r", encoding="utf-8") as f:
         return f.read()
 
 #最初の説明
