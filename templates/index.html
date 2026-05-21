@@ -9,24 +9,37 @@
 
 <body>
     <!-- 問題選択画面 -->
-    <div id="menu-screen" class="screen">
-        
-        <h1>セキュリティクイズ一覧</h1>
-        <button class="option-card" onclick="studyQuiz(1)">
-            クイズ1
-        </button>
-        <button class="option-card" onclick="studyQuiz(2)">
-            クイズ2
-        </button>
-        <button class="option-card" onclick="studyQuiz(3)">
-            クイズ3
-        </button>
+    <div id="top-screen" class="screenstart">
+        <div class="center-group">
+            <h1>セキュリティクイズ</h1>
+            <button class="start-botton" onclick="showMenuScreen()">
+                スタート
+            </button>
+        </div>
+    </div>
 
+    <!-- 問題選択画面 -->
+    <div id="menu-screen" class="screenvideo hidden">
+        <h1>セキュリティクイズ一覧</h1>
+        <div class="quiz-list">
+            <button class="option-card" onclick="studyQuiz(1)">
+                <span>SNS</span>
+                <img src="../static/quiz1.png" width="200">
+            </button>
+            <button class="option-card" onclick="studyQuiz(2)">
+                <span>フィッシングメール</span>
+                <img src="../static/quiz2.png" width="200">
+            </button>
+            <button class="option-card" onclick="studyQuiz(3)">
+                <span>パスワード</span>
+                <img src="../static/quiz3.png" width="200">
+            </button>
+        </div>
     </div>
 
     <!-- 動画視聴画面 -->
     <div id="study-screen" class="screenvideo hidden">
-    <header>
+        <header>
             <div class="progress-container">
                 <div class="progress-bar" style="width: 33%;"></div>
             </div>
@@ -47,11 +60,11 @@
     <!-- クイズ画面 -->
     <div id="image-screen" class="screen hidden">
         <h1>シナリオ</h1>
-        <img id="image-url" src="" width="500">
+        <img id="image-url" src="">
     </div>
 
     <div id="quiz-screen" class="screen hidden">
-    <header >
+        <header>
             <div class="progress-container">
                 <div class="progress-bar" style="width: 66%;"></div>
             </div>
@@ -61,31 +74,31 @@
         <h1>問題</h1>
         <h2 id="question-text"></h2>
         <div class="options-grid">
-            <button class="option-card" onclick="answerQuestion(1)">
-            <span class="option-label">1</span>
-            <p id="select1"></p>
-        </button>
-        <button class="option-card" onclick="answerQuestion(2)">
-            <span class="option-label">2</span>
-            <p id="select2"></p>
-        </button>
-        <button class="option-card" onclick="answerQuestion(3)">
-            <span class="option-label">3</span>
-            <p id="select3"></p>
-        </button>
-        <button class="option-card" onclick="answerQuestion(4)">
-            <span class="option-label">4</span>
-            <p id="select4"></p>
-        </button>
-            
+            <button class="botton-card" onclick="answerQuestion(1)">
+                <span class="option-label">1</span>
+                <p id="select1"></p>
+            </button>
+            <button class="botton-card" onclick="answerQuestion(2)">
+                <span class="option-label">2</span>
+                <p id="select2"></p>
+            </button>
+            <button class="botton-card" onclick="answerQuestion(3)">
+                <span class="option-label">3</span>
+                <p id="select3"></p>
+            </button>
+            <button class="botton-card" onclick="answerQuestion(4)">
+                <span class="option-label">4</span>
+                <p id="select4"></p>
+            </button>
+
         </div>
-        
+
 
     </div>
 
     <!-- 解説画面 -->
     <div id="explanation-screen" class="screen hidden">
-        <header >
+        <header>
             <div class="progress-container">
                 <div class="progress-bar" style="width: 100%;"></div>
             </div>
@@ -96,8 +109,8 @@
 
         <p id="explanation-text"></p>
 
-        <button onclick="showMenuScreen()">
-            問題選択へ
+        <button onclick="showTopScreen()">
+            トップ画面へ
         </button>
 
     </div>
