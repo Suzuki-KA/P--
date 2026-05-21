@@ -1,5 +1,8 @@
 function hideAllScreens() {
 
+    document.getElementById("top-screen")
+        .classList.add("hidden");
+
     document.getElementById("menu-screen")
         .classList.add("hidden");
 
@@ -15,6 +18,13 @@ function hideAllScreens() {
         .classList.add("hidden");
 }
 
+function showTopScreen() {
+
+    hideAllScreens();
+
+    document.getElementById("top-screen")
+        .classList.remove("hidden");
+}
 function showMenuScreen() {
 
     hideAllScreens();
@@ -164,6 +174,7 @@ async function studyQuiz(quizId) {
 }
 
 function answerQuestion(answerId) {
+    //nextStep();
     const data = {
         answer: [answerId]
     };

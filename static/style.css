@@ -2,6 +2,8 @@
     --primary-blue: #2563eb;      /* 信頼のブルー */
     --deep-blue: #1e40af;         /* 濃いブルー（強調） */
     --soft-blue: #dbeafe;         /* 薄いブルー（背景用） */
+    --2nd-blue: #38B4EA;
+    --3rd-blue:#3BCBE5;
     --bg-light: #f8fafc;          /* 全体背景 */
     --text-main: #1e293b;         /* メイン文字色 */
     --white: #ffffff;
@@ -17,7 +19,7 @@ body {
 
 .screen {
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 50px auto;
     background: white;
     padding: 30px;
@@ -26,10 +28,21 @@ body {
 
 .screenvideo {
     width: 800px;
+    min-height: 700px;
     margin: 50px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
+}
+
+.screenstart {
+    width: 800px;
+    min-height: 700px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
 }
 
 .hidden {
@@ -39,14 +52,36 @@ body {
 
 button {
     display: block;
-    width: 100%;
+    /*width: 100%;*/
     margin: 10px 0;
     padding: 12px;
     font-size: 16px;
     cursor: pointer;
+    margin-left: auto;
 }
 
 /*かざり*/
+.start-botton{
+    margin: 10px auto;
+    max-width: 320px;
+    padding: 24px;
+    border-radius: 20px;
+
+}
+
+.center-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /*プロセス*/
 .progress-container {
@@ -81,6 +116,18 @@ button {
 
 .option-card {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 24px;
+    background: var(--white);
+    border: 2px solid var(--soft-blue);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.botton-card {
+    display: flex;
+    margin-left: 0;
     align-items: center;
     padding: 18px 24px;
     background: var(--white);
@@ -92,6 +139,12 @@ button {
 }
 
 .option-card:hover {
+    border-color: var(--primary-blue);
+    background-color: var(--soft-blue);
+    transform: translateX(5px);
+}
+
+.botton-card:hover{
     border-color: var(--primary-blue);
     background-color: var(--soft-blue);
     transform: translateX(5px);
@@ -115,4 +168,22 @@ button {
     margin: 0;
     font-size: 1rem;
     font-weight: 500;
+}
+
+.quiz-list {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.option-card img {
+    margin-top: 10px;
+    pointer-events: none;
+    /*box-shadow : 0px 0px 10px #666666 ;*/
+}
+
+#image-url {
+    box-shadow : 0px 0px 10px #666666;
+    max-width: 500px;
 }
