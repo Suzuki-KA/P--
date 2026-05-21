@@ -27,7 +27,8 @@ body {
 }
 
 .screenvideo {
-    width: 800px;
+    width: 90%;
+    max-width: 1000px;
     min-height: 700px;
     margin: 50px auto;
     background: white;
@@ -36,7 +37,8 @@ body {
 }
 
 .screenstart {
-    width: 800px;
+    width: 90%;
+    Max-width: 1000px;
     min-height: 700px;
     margin: 50px auto;
     background: white;
@@ -186,4 +188,13 @@ button {
 #image-url {
     box-shadow : 0px 0px 10px #666666;
     max-width: 500px;
+}
+
+#video-frame {
+    width: 100%;
+    max-width: 900px;
+
+    aspect-ratio: 16 / 9;
+
+    border: none;
 }

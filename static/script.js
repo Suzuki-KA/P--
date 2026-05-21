@@ -89,6 +89,9 @@ function showQuizScreen() {
     const h2quiz = document.getElementById("question-text");
     if (h2quiz) h2quiz.textContent = currentQuestion || "";
 
+    const h2Scenario = document.getElementById("scenario-text");
+    if (h2Scenario) h2Scenario.textContent = currentScenario || "";
+
     // const imageUrl = document.getElementById("image-url");
     // if (imageUrl) imageUrl.textContent = currentImageUrl || "";
     // console.log(imageUrl);
@@ -123,6 +126,7 @@ let currentQuestion = null;
 let questionData = null;
 let currentExplanation = null;
 let currentImageUrl =null;
+let currentScenario = null;
 
 //クイズ番号の指定と説明動画URLを取得
 async function studyQuiz(quizId) {
@@ -149,6 +153,12 @@ async function studyQuiz(quizId) {
             : questionData.question || "";
 
         currentQuestion = question;
+
+        const scenario = typeof questionData === "string"
+            ? questionData
+            : questionData.scenario || "";
+
+        currentScenario = scenario;
 
         // const image = typeof questionData === "string"
         //     ? questionData
