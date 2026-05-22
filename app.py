@@ -50,6 +50,7 @@ def answer_post(answer:Answer,problem_number:int):
     for problem in problems:
         if problem_number == problem.get("number"):
             corect=(set(answer.answer)==set(problem["corect_answer"]))
+            problem["explanation"]=problem[f"explanation{answer.answer[0]}"]
             return {"corect":corect}
             
 #解説
