@@ -1,34 +1,44 @@
 :root {
-    --primary-blue: #2563eb;      /* 信頼のブルー */
-    --deep-blue: #1e40af;         /* 濃いブルー（強調） */
-    --soft-blue: #dbeafe;         /* 薄いブルー（背景用） */
+    --primary-blue: #2563eb;
+    /* 信頼のブルー */
+    --deep-blue: #1e40af;
+    /* 濃いブルー（強調） */
+    --soft-blue: #dbeafe;
+    /* 薄いブルー（背景用） */
     --2nd-blue: #38B4EA;
-    --3rd-blue:#3BCBE5;
-    --bg-light: #f8fafc;          /* 全体背景 */
-    --text-main: #1e293b;         /* メイン文字色 */
+    --3rd-blue: #3BCBE5;
+    --bg-light: #f8fafc;
+    /* 全体背景 */
+    --text-main: #1e293b;
+    /* メイン文字色 */
     --white: #ffffff;
     --transition: all 0.3s ease;
 }
+
 body {
     margin: 0;
     min-height: 100vh;
-    background-image: linear-gradient(
-    rgba(255,255,255,0.7),
-    rgba(255,255,255,0.7)
-),url("/static/back.jpeg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)), url("/static/back.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: sans-serif;
     text-align: center;
+    /*display: flex;*/
+    gap: 20px;
+}
+
+.flex {
     display: flex;
     gap: 20px;
 }
 
 .screen {
     width: 90%;
-    max-width: 600px;
-    margin: 50px auto;
+    max-width: 550px;
+    min-height: 700px;
+    margin: 25px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
@@ -38,17 +48,29 @@ body {
     width: 90%;
     max-width: 1000px;
     min-height: 700px;
-    margin: 50px auto;
+    margin: 25px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
 }
 
 .screenstart {
-    width: 90%;
+    width: 80%;
     Max-width: 1000px;
+    min-height: 600px;
+    margin: 25px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screenexplanation {
+    width: 90%;
+    Max-width: 700px;
     min-height: 700px;
-    margin: 50px auto;
+    margin: 25px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
@@ -62,7 +84,7 @@ body {
 
 button {
     display: block;
-    /*width: 100%;*/
+    width: 100%;
     margin: 10px 0;
     padding: 12px;
     font-size: 16px;
@@ -70,14 +92,17 @@ button {
     margin-left: auto;
 }
 
+.gotop {
+    margin: 80px 0;
+}
+
 /*かざり*/
-.start-botton{
+/*.start-botton {
     margin: 10px auto;
     max-width: 320px;
     padding: 24px;
     border-radius: 20px;
-
-}
+}*/
 
 .center-group {
     display: flex;
@@ -85,12 +110,14 @@ button {
     justify-content: center;
     align-items: center;
     gap: 16px;
-
-    
+    width: 80%;
+    Max-width: 1000px;
+    min-height: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
 }
 
 /*プロセス*/
@@ -135,6 +162,7 @@ button {
     cursor: pointer;
     transition: var(--transition);
 }
+
 .botton-card {
     display: flex;
     margin-left: 0;
@@ -154,7 +182,7 @@ button {
     transform: translateX(5px);
 }
 
-.botton-card:hover{
+.botton-card:hover {
     border-color: var(--primary-blue);
     background-color: var(--soft-blue);
     transform: translateX(5px);
@@ -194,7 +222,7 @@ button {
 }
 
 #image-url {
-    box-shadow : 0px 0px 10px #666666;
+    box-shadow: 0px 0px 10px #666666;
     max-width: 500px;
 }
 
@@ -205,4 +233,55 @@ button {
     aspect-ratio: 16 / 9;
 
     border: none;
+}
+
+
+/* ヘッダー/フッター風のアクセントバー */
+.accent-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #1e40af, #2563eb);
+}
+
+.accent-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #2563eb, #38B4EA);
+
+}
+
+
+/* 幾何学的装飾（六角形のイメージ） */
+.shape {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #38B4EA, #3BCBE5);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.shape-1 {
+    top: -50px;
+    left: -50px;
+    transform: rotate(15deg);
+}
+
+.shape-2 {
+    bottom: -60px;
+    right: -60px;
+    transform: rotate(-10deg);
+}
+
+/* ボタンを配置するエリア */
+.button-area {
+    /* ここに既存のスタートボタンが配置されます */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
