@@ -10,7 +10,7 @@
         "description_video_url":"https://drive.google.com/file/d/1_5va1nZz7pOxvJyGq7CDHgIi8jacNvPy/preview?usp=drivesdk",
         "options":[
             {"number":1,"option":"投稿文"},
-            {"number":2,"option":"画像内容(正解)"},
+            {"number":2,"option":"画像内容"},
             {"number":3,"option":"投稿時間"},
             {"number":3,"option":"位置情報"}
         ],
@@ -29,7 +29,7 @@
         "description_video_url":"https://drive.google.com/file/d/1MjcJpj9Cn86ZsSSWEsw8VsC5BOWpofl7/preview?usp=drivesdk",
         "options":[
             {"number":1,"option":"本文の日本語"},
-            {"number":2,"option":"送信元メールアドレス(正解)"},
+            {"number":2,"option":"送信元メールアドレス"},
             {"number":3,"option":"メールのデザイン"},
             {"number":4,"option":"怪しいものではない"}
         ],
@@ -50,7 +50,7 @@
             {"number":1,"option":"銀行のパスワードが流出する"},
             {"number":2,"option":"通販サイトのパスワードが流出する"},
             {"number":3,"option":"サブスクリプションサービスのパスワードが流出する"},
-            {"number":4,"option":"1～3全てのパスワードが流出する(正解)"}
+            {"number":4,"option":"1～3全てのパスワードが流出する"}
         ],
         "corect_answer":[4],
         "explanation":"同一のパスワードを使いまわすことで、一つのサービスからの情報で、複数のサービスの情報が流出してしまう危険性がある。特に、過去に登録したまま放置されているサービスや小規模のサービスからメールアドレスなど個人情報が流出する恐れもある。"
