@@ -160,10 +160,10 @@ async function studyQuiz(quizId) {
 
         currentScenario = scenario;
 
-        const image = typeof questionData === "string"
-            ? questionData
-            : questionData.image || "";
-        currentImageUrl = image;
+        // const image = typeof questionData === "string"
+        //     ? questionData
+        //     : questionData.image || "";
+        // currentImageUrl = image;
 
         const explanationResponse = await fetch(`/problem/${quizId}/explanation`);
         if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
@@ -183,41 +183,41 @@ async function studyQuiz(quizId) {
     }
 }
 
-function answerQuestion(answerId) {
-    //nextStep();
+async function answerQuestion(answerId) {
     const data = {
         answer: [answerId]
     };
-    fetch(`../problem/${currentProblemId}/answer`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => response.json())
-        .then(result => {
-            console.log(result.corect);
-            if (result.corect === true) {
-                alert("〇 正解！");
-            } else {
-                alert("× 不正解");
-            }
-            // 解説を再取得
-            const explanationResponse =
-                await fetch(`/problem/${currentProblemId}/explanation`);
-                if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
 
-            const explanationData =
-                await explanationResponse.json();
-            const explanation = typeof explanationData === "string"
-                    ? explanationData
-                    : explanationData.explanation || "";
-            currentExplanation = explanationData.explanation;
-            showExplanationScreen();
-        });
+    const response = await fetch(
+        `../problem/${currentProblemId}/answer`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+    );
 
+    const result = await response.json();
 
+    if (result.corect === true) {
+        alert("〇 正解！");
+    } else {
+        alert("× 不正解");
+    }
 
-    
+    // 解説を再取得
+    const explanationResponse =
+        await fetch(`/problem/${currentProblemId}/explanation`);
+        if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
+
+    const explanationData =
+        await explanationResponse.json();
+    const explanation = typeof explanationData === "string"
+            ? explanationData
+            : explanationData.explanation || "";
+    currentExplanation = explanationData.explanation;
+
+    showExplanationScreen();
 }
