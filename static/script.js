@@ -160,19 +160,19 @@ async function studyQuiz(quizId) {
 
         currentScenario = scenario;
 
-        // const image = typeof questionData === "string"
-        //     ? questionData
-        //     : questionData.image || "";
-        // currentImageUrl = image;
+        const image = typeof questionData === "string"
+            ? questionData
+            : questionData.image || "";
+        currentImageUrl = image;
 
-        //const explanationResponse = await fetch(`/problem/${quizId}/explanation`);
-        //if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
-        //explanationData = await explanationResponse.json();
-        //const explanation = typeof explanationData === "string"
-        //    ? explanationData
-        //    : explanationData.explanation || "";
+        const explanationResponse = await fetch(`/problem/${quizId}/explanation`);
+        if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
+        explanationData = await explanationResponse.json();
+        const explanation = typeof explanationData === "string"
+            ? explanationData
+            : explanationData.explanation || "";
 
-        //currentExplanation = explanation;
+        currentExplanation = explanation;
 
 
 
