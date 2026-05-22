@@ -10,7 +10,13 @@
     --transition: all 0.3s ease;
 }
 body {
-    background-color: #f4f4f4;
+    background-image: linear-gradient(
+    rgba(255,255,255,0.4),
+    rgba(255,255,255,0.4)
+),url("/static/back.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: sans-serif;
     text-align: center;
     display: flex;
@@ -21,7 +27,7 @@ body {
     width: 90%;
     max-width: 600px;
     margin: 50px auto;
-    background: white;
+    /*background: white;*/
     padding: 30px;
     border-radius: 10px;
 }
@@ -31,7 +37,7 @@ body {
     max-width: 1000px;
     min-height: 700px;
     margin: 50px auto;
-    background: white;
+    /*background: white;*/
     padding: 30px;
     border-radius: 10px;
 }
@@ -41,7 +47,7 @@ body {
     Max-width: 1000px;
     min-height: 700px;
     margin: 50px auto;
-    background: white;
+    /*background: white;*/
     padding: 30px;
     border-radius: 10px;
     position: relative;
