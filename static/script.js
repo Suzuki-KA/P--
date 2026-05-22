@@ -165,14 +165,14 @@ async function studyQuiz(quizId) {
         //     : questionData.image || "";
         // currentImageUrl = image;
 
-        const explanationResponse = await fetch(`/problem/${quizId}/explanation`);
-        if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
-        explanationData = await explanationResponse.json();
-        const explanation = typeof explanationData === "string"
-            ? explanationData
-            : explanationData.explanation || "";
+        //const explanationResponse = await fetch(`/problem/${quizId}/explanation`);
+        //if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
+        //explanationData = await explanationResponse.json();
+        //const explanation = typeof explanationData === "string"
+        //    ? explanationData
+        //    : explanationData.explanation || "";
 
-        currentExplanation = explanation;
+        //currentExplanation = explanation;
 
 
 
@@ -203,6 +203,17 @@ function answerQuestion(answerId) {
             } else {
                 alert("× 不正解");
             }
+            // 解説を再取得
+            const explanationResponse =
+                await fetch(`/problem/${currentProblemId}/explanation`);
+                if (!explanationResponse.ok) throw new Error('問題の取得に失敗しました');
+
+            const explanationData =
+                await explanationResponse.json();
+            const explanation = typeof explanationData === "string"
+                    ? explanationData
+                    : explanationData.explanation || "";
+            currentExplanation = explanationData.explanation;
             showExplanationScreen();
         });
 
