@@ -23,7 +23,7 @@
     },
     {
         "number":2,
-        "question":"このメールに怪しい点はあるかな？？”最も怪しい点”と考えられるものを選んでね！",
+        "question":"次に取るべき行動として、最も適切なものを選んでね。",
         "scenario":"あなたがよく使っている大手オンラインショップからこんなメールが届いたよ。",
         "question_image":"/static/quiz2.png",
         "description_video_url":"https://drive.google.com/file/d/1MjcJpj9Cn86ZsSSWEsw8VsC5BOWpofl7/preview?usp=drivesdk",

@@ -8,19 +8,31 @@
 </head>
 
 <body>
-    <!-- 問題選択画面 -->
     <div id="top-screen" class="screenstart">
         <div class="center-group">
-            <h1>セキュリティクイズ</h1>
-            <button class="start-botton" onclick="showMenuScreen()">
-                スタート
-            </button>
+            <!-- 画面上部のアクセントライン -->
+            <div class="accent-top"></div>
+
+            <!--div class="main-card"-->
+                <!-- 背景の幾何学装飾 -->
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <h1>セキュリティクイズ</h1>
+                <!-- ボタン配置エリア -->
+                <div class="button-area">
+                    <!-- ここに、あなたが既に作成済みの「スタートボタン」のコードを入れてください -->
+                    <button class="your-start-button" onclick="showMenuScreen()">スタート</button>
+                </div>
+            <!--/div-->
+
+            <!-- 画面下部のアクセントライン -->
+            <div class="accent-bottom"></div>
+
         </div>
     </div>
-
     <!-- 問題選択画面 -->
-    <div id="menu-screen" class="screenvideo hidden">
-        <h1>セキュリティクイズ一覧</h1>
+    <div id="menu-screen" class="screenstart hidden">
+        <h1>クイズ一覧</h1>
         <div class="quiz-list">
             <button class="option-card" onclick="studyQuiz(1)">
                 <span>SNS</span>
@@ -58,47 +70,49 @@
     </div>
 
     <!-- クイズ画面 -->
-    <div id="image-screen" class="screen hidden">
-        <h1>シナリオ</h1>
-        <h2 id="scenario-text"></h2>
-        <img id="image-url" src="">
-    </div>
+    <div class="flex">
+        <div id="image-screen" class="screen hidden">
+            <h1>シナリオ</h1>
+            <h2 id="scenario-text"></h2>
+            <img id="image-url" src="">
+        </div>
 
-    <div id="quiz-screen" class="screen hidden">
-        <header>
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 66%;"></div>
+        <div id="quiz-screen" class="screen hidden">
+            <header>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 66%;"></div>
+                </div>
+                <div class="step-number">Step 2 / 3</div>
+            </header>
+
+            <h1>問題</h1>
+            <h2 id="question-text"></h2>
+            <div class="options-grid">
+                <button class="botton-card" onclick="answerQuestion(1)">
+                    <span class="option-label">1</span>
+                    <p id="select1"></p>
+                </button>
+                <button class="botton-card" onclick="answerQuestion(2)">
+                    <span class="option-label">2</span>
+                    <p id="select2"></p>
+                </button>
+                <button class="botton-card" onclick="answerQuestion(3)">
+                    <span class="option-label">3</span>
+                    <p id="select3"></p>
+                </button>
+                <button class="botton-card" onclick="answerQuestion(4)">
+                    <span class="option-label">4</span>
+                    <p id="select4"></p>
+                </button>
+
             </div>
-            <div class="step-number">Step 2 / 3</div>
-        </header>
-
-        <h1>問題</h1>
-        <h2 id="question-text"></h2>
-        <div class="options-grid">
-            <button class="botton-card" onclick="answerQuestion(1)">
-                <span class="option-label">1</span>
-                <p id="select1"></p>
-            </button>
-            <button class="botton-card" onclick="answerQuestion(2)">
-                <span class="option-label">2</span>
-                <p id="select2"></p>
-            </button>
-            <button class="botton-card" onclick="answerQuestion(3)">
-                <span class="option-label">3</span>
-                <p id="select3"></p>
-            </button>
-            <button class="botton-card" onclick="answerQuestion(4)">
-                <span class="option-label">4</span>
-                <p id="select4"></p>
-            </button>
-
         </div>
 
 
     </div>
 
     <!-- 解説画面 -->
-    <div id="explanation-screen" class="screen hidden">
+    <div id="explanation-screen" class="screenexplanation hidden">
         <header>
             <div class="progress-container">
                 <div class="progress-bar" style="width: 100%;"></div>
@@ -110,7 +124,7 @@
 
         <p id="explanation-text"></p>
 
-        <button onclick="showTopScreen()">
+        <button class="gotop" onclick="showTopScreen()">
             トップ画面へ
         </button>
 
