@@ -116,6 +116,7 @@ function showExplanationScreen() {
         .classList.remove("hidden");
 
     const explanation = document.getElementById("explanation-text");
+    console.log(currentExplanation);
     if (explanation) explanation.innerHTML = currentExplanation || "";
 
 }
