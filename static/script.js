@@ -116,6 +116,7 @@ function showExplanationScreen() {
         .classList.remove("hidden");
 
     const explanation = document.getElementById("explanation-text");
+    console.log(currentExplanation);
     if (explanation) explanation.innerHTML = currentExplanation || "";
 
 }
@@ -214,7 +215,6 @@ async function answerQuestion(answerId) {
     const explanationData = await explanationResponse.json();
     
     currentExplanation = explanationData.explanation;
-    console.log(currentExplanation);
 
     showExplanationScreen();
 }
